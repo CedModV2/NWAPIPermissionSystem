@@ -7,7 +7,7 @@ namespace NWAPIPermissionSystem.Commands.Permissions
     {
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
-            if (sender.CheckPermission("permissions.reload"))
+            if (!sender.CheckPermission("permissions.reload"))
             {
                 response = "You do not have the required permission (permissions.reload) to execute this command";
                 return false;

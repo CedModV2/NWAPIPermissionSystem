@@ -89,6 +89,8 @@ namespace NWAPIPermissionSystem
 
         public static bool CheckPermission(this CommandSender sender, string permission)
         {
+            if (Plugin.Singleton.Config.LogDebug)
+                Log.Debug($"Sender: {sender.SenderId} {sender.FullPermissions} {sender.GetType()}");
             if (!sender.FullPermissions)
             {
                 switch (sender)
@@ -109,15 +111,27 @@ namespace NWAPIPermissionSystem
         public static bool CheckPermission(string userId, string permission)
         {
 
+            if (Plugin.Singleton.Config.LogDebug)
+                Log.Debug($"Check {userId}");
             string group = "";
             if (ServerStatic.PermissionsHandler._members.ContainsKey(userId))
             {
                 group = ServerStatic.PermissionsHandler._members[userId];
+                
+                if (Plugin.Singleton.Config.LogDebug)
+                    Log.Debug($"Found in RA config {group}");
             }
             else
             {
                 //todo use player.get when it is fixed (https://github.com/northwood-studios/NwPluginAPI/issues/42)
                 ReferenceHub hub = ReferenceHub.AllHubs.FirstOrDefault(s => s.characterClassManager.UserId == userId);
+                
+                if (Plugin.Singleton.Config.LogDebug)
+                    Log.Debug($"Found hubs {hub.PlayerId}");
+                
+                if (hub.isLocalPlayer || hub.characterClassManager.UserId == ReferenceHub._hostHub.characterClassManager.UserId)
+                    return true;
+                
                 UserGroup playerGroup = hub.serverRoles.Group;
                 group = playerGroup != null ? ServerStatic.GetPermissionsHandler()._groups.FirstOrDefault(g => g.Value.EqualsTo(playerGroup)).Key : null;
             }
