@@ -25,7 +25,7 @@ namespace NWAPIPermissionSystem
                 }
             },
             {
-                "mod", new Group()
+                "moderator", new Group()
                 {
                     Permissions = new List<string>() { "aplugin.command" },
                     InheritedGroups = new List<string>()
