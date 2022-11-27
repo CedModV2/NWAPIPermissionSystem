@@ -3,6 +3,8 @@ using System.Text;
 using CommandSystem;
 using CommandSystem.Commands.Shared;
 using NorthwoodLib.Pools;
+using NWAPIPermissionSystem.Commands.Permissions;
+using ReloadCommand = NWAPIPermissionSystem.Commands.Permissions.ReloadCommand;
 
 namespace NWAPIPermissionSystem.Commands
 {
