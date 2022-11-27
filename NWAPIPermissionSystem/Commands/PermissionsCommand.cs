@@ -9,6 +9,8 @@ namespace NWAPIPermissionSystem.Commands
     [CommandHandler(typeof(GameConsoleCommandHandler))]
     public class PermissionsCommand: ParentCommand
     {
+        public PermissionsCommand() => LoadGeneratedCommands();
+        
         public override void LoadGeneratedCommands()
         {
             RegisterCommand(new ReloadCommand());
