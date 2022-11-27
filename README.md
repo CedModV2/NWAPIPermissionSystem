@@ -3,7 +3,7 @@ Plugin Permission System Designed for use with Northwood's Plugin API For SCP:SL
 
 ## installation
 
-Download the NWAPIPermissionSystem.dll from the [Releases](/releases) page
+Download the NWAPIPermissionSystem.dll from the [Releases](https://github.com/CedModV2/NWAPIPermissionSystem/releases/) page
 
 ### Linux
 
