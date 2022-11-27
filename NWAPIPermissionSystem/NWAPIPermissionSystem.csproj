@@ -49,6 +49,7 @@
 
     <ItemGroup>
       <Compile Include="Commands\PermissionsCommand.cs" />
+      <Compile Include="Commands\Permissions\ReloadCommand.cs" />
       <Compile Include="Models\Group.cs" />
       <Compile Include="PermissionHandler.cs" />
       <Compile Include="PermissionsConfig.cs" />
@@ -58,10 +59,6 @@
 
     <ItemGroup>
       <None Include="packages.config" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Commands\Permissions" />
     </ItemGroup>
     
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

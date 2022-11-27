@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using CommandSystem;
+using CommandSystem.Commands.Shared;
 using NorthwoodLib.Pools;
 
 namespace NWAPIPermissionSystem.Commands
@@ -10,7 +11,7 @@ namespace NWAPIPermissionSystem.Commands
     {
         public override void LoadGeneratedCommands()
         {
-            
+            RegisterCommand(new ReloadCommand());
         }
 
         protected override bool ExecuteParent(ArraySegment<string> arguments, ICommandSender sender, out string response)
