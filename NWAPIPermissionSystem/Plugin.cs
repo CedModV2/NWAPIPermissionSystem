@@ -10,7 +10,7 @@ namespace NWAPIPermissionSystem
     {
         public static Plugin Singleton { get; set; }
         
-        [PluginEntryPoint("NWApiPermissionSystem", "0.0.1", "A plugin that serves as PermissionManager for plugins using the NWApi", "ced777ric#0001")]
+        [PluginEntryPoint("NWApiPermissionSystem", "0.0.2", "A plugin that serves as PermissionManager for plugins using the NWApi", "ced777ric#0001")]
         private void LoadPlugin()
         {
             Singleton = this;
