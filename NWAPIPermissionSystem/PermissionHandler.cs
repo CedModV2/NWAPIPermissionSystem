@@ -42,6 +42,8 @@ namespace NWAPIPermissionSystem
             }
             
             Plugin.Singleton.Handler.LoadConfig(Plugin.Singleton, nameof(Plugin.PermissionsConfig));
+            
+            PermissionGroups.Clear();
 
             foreach (var group in Plugin.Singleton.PermissionsConfig.Groups)
             {
