@@ -29,7 +29,7 @@ namespace NWAPIPermissionSystem.Commands
             return false;
         }
 
-        public override string Command { get; } = "permissions";
+        public override string Command { get; } = "pluginpermissions";
         public override string[] Aliases { get; }
         public override string Description { get; } = "Command for managing plugin permissions.";
     }
