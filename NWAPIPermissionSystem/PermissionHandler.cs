@@ -86,7 +86,7 @@ namespace NWAPIPermissionSystem
         public static bool CheckPermission(this ICommandSender sender, string permission) =>
             CheckPermission(sender as CommandSender, permission);
         
-        public static bool CheckPermission(this IPlayer player, string permission) =>
+        public static bool CheckPermission(this Player player, string permission) =>
             CheckPermission(player.ReferenceHub.characterClassManager.UserId, permission);
 
         public static bool CheckPermission(this CommandSender sender, string permission)
