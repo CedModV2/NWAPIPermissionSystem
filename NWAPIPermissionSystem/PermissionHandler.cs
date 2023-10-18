@@ -87,7 +87,7 @@ namespace NWAPIPermissionSystem
             CheckPermission(sender as CommandSender, permission);
         
         public static bool CheckPermission(this Player player, string permission) =>
-            CheckPermission(player.ReferenceHub.characterClassManager.UserId, permission);
+            CheckPermission(player.ReferenceHub.authManager.UserId, permission);
 
         public static bool CheckPermission(this CommandSender sender, string permission)
         {
@@ -126,12 +126,12 @@ namespace NWAPIPermissionSystem
             else
             {
                 //todo use player.get when it is fixed (https://github.com/northwood-studios/NwPluginAPI/issues/42)
-                ReferenceHub hub = ReferenceHub.AllHubs.FirstOrDefault(s => s.characterClassManager.UserId == userId);
+                ReferenceHub hub = ReferenceHub.AllHubs.FirstOrDefault(s => s.authManager.UserId == userId);
                 
                 if (Plugin.Singleton.Config.LogDebug)
                     Log.Debug($"Found hubs {hub.PlayerId}");
                 
-                if (hub.isLocalPlayer || hub.characterClassManager.UserId == ReferenceHub._hostHub.characterClassManager.UserId)
+                if (hub.isLocalPlayer || hub.authManager.UserId == ReferenceHub._hostHub.authManager.UserId)
                     return true;
                 
                 UserGroup playerGroup = hub.serverRoles.Group;
